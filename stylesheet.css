@@ -1,0 +1,52 @@
+button.number {
+    background-color: teal;
+    border-color: teal;
+
+}
+
+button.operator {
+    background-color: orange;
+    border-color: orange;
+
+}
+
+button.decimal {
+    background-color: teal;
+    border-color: teal;
+}
+
+button {
+    display: inline-block;
+    width: 100px;
+    height: 80px;  
+    padding: 15px;
+    margin: 3px;
+    margin-left: auto;
+    border-radius: 12px;
+    font-size: 22px;
+
+}
+
+div#container {
+    width: 445px;
+    height: 409px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    text-align: right;
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+div#display {
+    border: solid;
+    border-radius: 12px;
+    text-align: right;
+    margin-left: 10px;
+    margin-right: 3px;
+    font-size: 45px;
+}
