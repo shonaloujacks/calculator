@@ -35,12 +35,14 @@ else if (operator === "*") {
 }
 } 
 
-
+let displayNumber = ""; 
 const displayDiv = document.getElementById('display');
 
 function displayid(number) {
-    displayDiv.innerHTML = number; 
+    displayNumber += number;
+    displayDiv.innerHTML = displayNumber;
 }
+
 const button1 = document.querySelector('button.number[id="1"]');
 button1.addEventListener("click", function () {
     displayid(1)
@@ -104,9 +106,8 @@ button0.addEventListener("click", function () {
 
 
 
+
 // code to change display?
 // document.getElementById("display").innerHTML+="button.id"; 
-
-//When a button is clicked, need to clear the display and show the new number on the display 
 
 
