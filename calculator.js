@@ -39,8 +39,10 @@ let displayNumber = [];
 const displayDiv = document.getElementById('display');
 
 function displayid(number) {
+    if (displayNumber.length < 15) {
     displayNumber.push(number);
     displayDiv.innerHTML = displayNumber.join('');
+    }
 }
 
 function cleardisplay() {
