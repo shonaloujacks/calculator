@@ -45,7 +45,7 @@ function displayid(number) {
 
 function cleardisplay() {
     displayNumber.splice(0, displayNumber.length);
-    displayDiv.innerText = ' ';
+    displayDiv.innerText = '0';
 }
 
 
@@ -54,10 +54,6 @@ buttonClear.addEventListener("click", function () {
     cleardisplay()
 
 })
-
-
-displayNumber[0] 
-displayNumber[1] 
 
 
 const button1 = document.querySelector('button.number[id="1"]');
@@ -120,6 +116,19 @@ button0.addEventListener("click", function () {
 
 })
 
+
+
+const buttonDecimal = document.querySelector('button.decimal[id="."]');
+buttonDecimal.addEventListener("click", function () {
+    if (!displayNumber.find((element) => element === '.')) {
+        displayid('.')   
+    }
+})
+
+
+
+displayNumber[0] 
+displayNumber[1] 
 
 
 
