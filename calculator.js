@@ -35,13 +35,30 @@ else if (operator === "*") {
 }
 } 
 
-let displayNumber = ""; 
+let displayNumber = []; 
 const displayDiv = document.getElementById('display');
 
 function displayid(number) {
-    displayNumber += number;
-    displayDiv.innerHTML = displayNumber;
+    displayNumber.push(number);
+    displayDiv.innerHTML = displayNumber.join('');
 }
+
+function cleardisplay() {
+    displayNumber.splice(0, displayNumber.length);
+    displayDiv.innerText = ' ';
+}
+
+
+const buttonClear = document.querySelector('button.operator[id="ac"]');
+buttonClear.addEventListener("click", function () {
+    cleardisplay()
+
+})
+
+
+displayNumber[0] 
+displayNumber[1] 
+
 
 const button1 = document.querySelector('button.number[id="1"]');
 button1.addEventListener("click", function () {
@@ -104,10 +121,5 @@ button0.addEventListener("click", function () {
 })
 
 
-
-
-
-// code to change display?
-// document.getElementById("display").innerHTML+="button.id"; 
 
 
