@@ -19,6 +19,7 @@ let firstNumber = "";
 let operator = "";
 let secondNumber = "";
 
+
 function operate (firstNumber, operator, secondNumber) {
 
  if (operator === "+") {
@@ -37,6 +38,9 @@ else if (operator === "*") {
 
 let displayNumber = []; 
 const displayDiv = document.getElementById('display');
+
+
+
 
 function displayid(number) {
     if (displayNumber.length < 15) {
@@ -115,7 +119,6 @@ button9.addEventListener("click", function () {
 const button0 = document.querySelector('button.number[id="0"]');
 button0.addEventListener("click", function () {
     displayid(0)
-
 })
 
 
@@ -127,10 +130,34 @@ buttonDecimal.addEventListener("click", function () {
     }
 })
 
+let solution
+
+const buttonAdd = document.querySelector('button.operator[id="+"]');
+buttonAdd.addEventListener("click", function () { 
+    operator = "+";
+})
+
+const buttonMinus = document.querySelector('button.operator[id="-"]');
+buttonMinus.addEventListener("click", function () { 
+    operator = "-";
+})
+
+const buttonMultiply = document.querySelector('button.operator[id="*"]');
+buttonMultiply.addEventListener("click", function () { 
+    operator = "*";
+})
+
+const buttonDivide = document.querySelector('button.operator[id="/"]');
+buttonDivide.addEventListener("click", function () { 
+    operator = "/";
+})
 
 
-displayNumber[0] 
-displayNumber[1] 
+
+// for operator buttons, clear window using displayDiv - don't touch displayNumber array 
+
+
+
 
 
 
