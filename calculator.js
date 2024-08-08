@@ -19,7 +19,9 @@ let operator = "";
 let secondNumber = "";
 
 function operate(firstNumber, operator, secondNumber) {
+  console.log(`parsing firstNumber: ${firstNumber}`);
   firstNumber = parseFloat(firstNumber);
+  console.log(`parsing secondNumber: ${secondNumber}`);
   secondNumber = parseFloat(secondNumber);
 
   if (operator === "+") {
@@ -38,13 +40,17 @@ const displayDiv = document.getElementById("display");
 function numberIsHigherThanLimit() {
   if (firstNumber.length > 13 || secondNumber.length > 13) {
     console.log(
-      "at least one number is higher than 13",
+      "at least one number is longer than 13 digits",
       firstNumber,
       secondNumber
     );
     return true;
   }
-  console.log("Neither number is higher than 13", firstNumber, secondNumber);
+  console.log(
+    "Neither number is longer than 13 digits",
+    firstNumber,
+    secondNumber
+  );
   return false;
 }
 
@@ -65,10 +71,10 @@ button1.addEventListener("click", function () {
   if (!numberIsHigherThanLimit()) {
     if (!operator) {
       firstNumber += "1";
-      displayDiv.innerText = firstNumber;
+      displayDiv.innerText = firstNumber.toString().substring(0, 13);
     } else {
       secondNumber += "1";
-      displayDiv.innerText = secondNumber;
+      displayDiv.innerText = secondNumber.toString().substring(0, 13);
     }
   }
 });
@@ -78,10 +84,10 @@ button2.addEventListener("click", function () {
   if (!numberIsHigherThanLimit()) {
     if (!operator) {
       firstNumber += "2";
-      displayDiv.innerText = firstNumber;
+      displayDiv.innerText = firstNumber.toString().substring(0, 13);
     } else {
       secondNumber += "2";
-      displayDiv.innerText = secondNumber;
+      displayDiv.innerText = secondNumber.toString().substring(0, 13);
     }
   }
 });
@@ -91,10 +97,10 @@ button3.addEventListener("click", function () {
   if (!numberIsHigherThanLimit()) {
     if (!operator) {
       firstNumber += "3";
-      displayDiv.innerText = firstNumber;
+      displayDiv.innerText = firstNumber.toString().substring(0, 13);
     } else {
       secondNumber += "3";
-      displayDiv.innerText = secondNumber;
+      displayDiv.innerText = secondNumber.toString().substring(0, 13);
     }
   }
 });
@@ -104,10 +110,10 @@ button4.addEventListener("click", function () {
   if (!numberIsHigherThanLimit()) {
     if (!operator) {
       firstNumber += "4";
-      displayDiv.innerText = firstNumber;
+      displayDiv.innerText = firstNumber.toString().substring(0, 13);
     } else {
       secondNumber += "4";
-      displayDiv.innerText = secondNumber;
+      displayDiv.innerText = secondNumber.toString().substring(0, 13);
     }
   }
 });
@@ -117,10 +123,10 @@ button5.addEventListener("click", function () {
   if (!numberIsHigherThanLimit()) {
     if (!operator) {
       firstNumber += "5";
-      displayDiv.innerText = firstNumber;
+      displayDiv.innerText = firstNumber.toString().substring(0, 13);
     } else {
       secondNumber += "5";
-      displayDiv.innerText = secondNumber;
+      displayDiv.innerText = secondNumber.toString().substring(0, 13);
     }
   }
 });
@@ -130,10 +136,10 @@ button6.addEventListener("click", function () {
   if (!numberIsHigherThanLimit()) {
     if (!operator) {
       firstNumber += "6";
-      displayDiv.innerText = firstNumber;
+      displayDiv.innerText = firstNumber.toString().substring(0, 13);
     } else {
       secondNumber += "6";
-      displayDiv.innerText = secondNumber;
+      displayDiv.innerText = secondNumber.toString().substring(0, 13);
     }
   }
 });
@@ -143,10 +149,10 @@ button7.addEventListener("click", function () {
   if (!numberIsHigherThanLimit()) {
     if (!operator) {
       firstNumber += "7";
-      displayDiv.innerText = firstNumber;
+      displayDiv.innerText = firstNumber.toString().substring(0, 13);
     } else {
       secondNumber += "7";
-      displayDiv.innerText = secondNumber;
+      displayDiv.innerText = secondNumber.toString().substring(0, 13);
     }
   }
 });
@@ -156,10 +162,10 @@ button8.addEventListener("click", function () {
   if (!numberIsHigherThanLimit()) {
     if (!operator) {
       firstNumber += "8";
-      displayDiv.innerText = firstNumber;
+      displayDiv.innerText = firstNumber.toString().substring(0, 13);
     } else {
       secondNumber += "8";
-      displayDiv.innerText = secondNumber;
+      displayDiv.innerText = secondNumber.toString().substring(0, 13);
     }
   }
 });
@@ -169,10 +175,10 @@ button9.addEventListener("click", function () {
   if (!numberIsHigherThanLimit()) {
     if (!operator) {
       firstNumber += "9";
-      displayDiv.innerText = firstNumber;
+      displayDiv.innerText = firstNumber.toString().substring(0, 13);
     } else {
       secondNumber += "9";
-      displayDiv.innerText = secondNumber;
+      displayDiv.innerText = secondNumber.toString().substring(0, 13);
     }
   }
 });
@@ -183,10 +189,10 @@ button0.addEventListener("click", function () {
     if (firstNumber.length !== 0) {
       if (!operator) {
         firstNumber += "0";
-        displayDiv.innerText = firstNumber;
+        displayDiv.innerText = firstNumber.toString().substring(0, 13);
       } else {
         secondNumber += "0";
-        displayDiv.innerText = secondNumber;
+        displayDiv.innerText = secondNumber.toString().substring(0, 13);
       }
     }
   }
@@ -196,16 +202,16 @@ const buttonDecimal = document.querySelector('button.decimal[id="."]');
 buttonDecimal.addEventListener("click", function () {
   if (!firstNumber.includes(".", 0) && firstNumber.length === 0) {
     firstNumber += "0.";
-    displayDiv.innerText = firstNumber;
+    displayDiv.innerText = firstNumber.toString().substring(0, 13);
   } else if (!firstNumber.includes(".", 0) && !operator) {
     firstNumber += ".";
-    displayDiv.innerText = firstNumber;
+    displayDiv.innerText = firstNumber.toString().substring(0, 13);
   } else if (!secondNumber.includes(".", 0) && secondNumber.length === 0) {
     secondNumber += "0.";
-    displayDiv.innerText = secondNumber;
+    displayDiv.innerText = secondNumber.toString().substring(0, 13);
   } else if (!secondNumber.includes(".", 0)) {
     secondNumber += ".";
-    displayDiv.innerText = secondNumber;
+    displayDiv.innerText = secondNumber.toString().substring(0, 13);
   }
 });
 
@@ -213,7 +219,7 @@ const buttonAdd = document.querySelector('button.operator[id="+"]');
 buttonAdd.addEventListener("click", function () {
   if (operator) {
     const answer = operate(firstNumber, operator, secondNumber);
-    displayDiv.innerText = answer;
+    displayDiv.innerText = answer.toString().substring(0, 15);
     firstNumber = answer;
     secondNumber = "";
   }
@@ -224,7 +230,7 @@ const buttonMinus = document.querySelector('button.operator[id="-"]');
 buttonMinus.addEventListener("click", function () {
   if (operator) {
     const answer = operate(firstNumber, operator, secondNumber);
-    displayDiv.innerText = answer;
+    displayDiv.innerText = answer.toString().substring(0, 15);
     firstNumber = answer;
     secondNumber = "";
   }
@@ -235,7 +241,7 @@ const buttonMultiply = document.querySelector('button.operator[id="*"]');
 buttonMultiply.addEventListener("click", function () {
   if (operator) {
     const answer = operate(firstNumber, operator, secondNumber);
-    displayDiv.innerText = answer;
+    displayDiv.innerText = answer.toString().substring(0, 15);
     firstNumber = answer;
     secondNumber = "";
   }
@@ -246,7 +252,7 @@ const buttonDivide = document.querySelector('button.operator[id="/"]');
 buttonDivide.addEventListener("click", function () {
   if (operator) {
     const answer = operate(firstNumber, operator, secondNumber);
-    displayDiv.innerText = answer;
+    displayDiv.innerText = answer.toString().substring(0, 15);
     firstNumber = answer;
     secondNumber = "";
   }
@@ -255,12 +261,21 @@ buttonDivide.addEventListener("click", function () {
 
 const buttonEquals = document.querySelector('button.equals[id="\\3d"]');
 buttonEquals.addEventListener("click", function () {
-  if (firstNumber.includes("0", 0) && firstNumber.length === 1) {
+  if (
+    firstNumber.toString().includes("0", 0) &&
+    firstNumber.toString().length === 1
+  ) {
     displayDiv.innerText = "Hell nah";
-  } else if (secondNumber.includes("0", 0) && secondNumber.length === 1) {
+  } else if (
+    secondNumber.toString().includes("0", 0) &&
+    secondNumber.toString().length === 1
+  ) {
     displayDiv.innerText = "Hell nah";
   } else {
     const answer = operate(firstNumber, operator, secondNumber);
-    displayDiv.innerText = parseFloat(answer.toFixed(13));
+    displayDiv.innerText = answer.toString().substring(0, 15);
+    firstNumber = answer;
+    secondNumber = "";
+    operator = "";
   }
 });
