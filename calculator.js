@@ -21,8 +21,8 @@ let result;
 let operatorCount = 0;
 
 function operate(firstNumber, operator, secondNumber) {
-  firstNumber = parseInt(firstNumber);
-  secondNumber = parseInt(secondNumber);
+  firstNumber = parseFloat(firstNumber);
+  secondNumber = parseFloat(secondNumber);
   if (operator === "+") {
     return add(firstNumber, secondNumber);
   } else if (operator === "-") {
