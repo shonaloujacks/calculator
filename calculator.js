@@ -17,8 +17,6 @@ function divide(a, b) {
 let firstNumber = "";
 let operator = "";
 let secondNumber = "";
-let result;
-let operatorCount = 0;
 
 function operate(firstNumber, operator, secondNumber) {
   firstNumber = parseFloat(firstNumber);
@@ -33,11 +31,6 @@ function operate(firstNumber, operator, secondNumber) {
     return multiply(firstNumber, secondNumber);
   }
 }
-
-//   if (operator !== "=") {
-//   }
-
-// If operator key pressed again display answer on screen
 
 const displayDiv = document.getElementById("display");
 
@@ -198,12 +191,16 @@ button0.addEventListener("click", function () {
   }
 });
 
-// const buttonDecimal = document.querySelector('button.decimal[id="."]');
-// buttonDecimal.addEventListener("click", function () {
-//   if (!displayNumber.find((element) => element === ".")) {
-//     displayid(".");
-//   }
-// });
+const buttonDecimal = document.querySelector('button.decimal[id="."]');
+buttonDecimal.addEventListener("click", function () {
+  if (!firstNumber.includes(".", 0)) {
+    firstNumber += ".";
+    displayDiv.innerText = firstNumber;
+  } else if (!secondNumber.includes(".", 0)) {
+    secondNumber += ".";
+    displayDiv.innerText = secondNumber;
+  }
+});
 
 const buttonAdd = document.querySelector('button.operator[id="+"]');
 buttonAdd.addEventListener("click", function () {
@@ -251,6 +248,12 @@ buttonDivide.addEventListener("click", function () {
 
 const buttonEquals = document.querySelector('button.equals[id="\\3d"]');
 buttonEquals.addEventListener("click", function () {
-  const answer = operate(firstNumber, operator, secondNumber);
-  displayDiv.innerText = answer;
+  if (firstNumber.includes("0", 0) && firstNumber.length === 1) {
+    displayDiv.innerText = "Hell nah";
+  } else if (secondNumber.includes("0", 0) && secondNumber.length === 1) {
+    displayDiv.innerText = "Hell nah";
+  } else {
+    const answer = operate(firstNumber, operator, secondNumber);
+    displayDiv.innerText = answer;
+  }
 });
