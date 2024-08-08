@@ -1,52 +1,56 @@
 button.number {
-    background-color: teal;
-    border-color: teal;
-
+  background-color: teal;
+  border-color: teal;
 }
 
 button.operator {
-    background-color: orange;
-    border-color: orange;
-
+  background-color: orange;
+  border-color: orange;
 }
 
 button.decimal {
-    background-color: teal;
-    border-color: teal;
+  background-color: teal;
+  border-color: teal;
 }
 
 button {
-    display: inline-block;
-    width: 100px;
-    height: 80px;  
-    padding: 15px;
-    margin: 3px;
-    margin-left: auto;
-    border-radius: 12px;
-    font-size: 22px;
+  display: inline-block;
+  width: 100px;
+  height: 80px;
+  padding: 15px;
+  margin: 3px;
+  margin-left: auto;
+  border-radius: 12px;
+  font-size: 22px;
+}
 
+button[id="="] {
+  width: 430px;
+  background-color: lightgray;
+  border-color: lightgrey;
+  font-size: 33px;
 }
 
 div#container {
-    width: 445px;
-    height: 409px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 22px;
-    text-align: right;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    
+  width: 445px;
+  height: 409px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 div#display {
-    border: solid;
-    border-radius: 12px;
-    text-align: right;
-    margin-left: 10px;
-    font-size: 45px;
-    margin-bottom: 5px;
+  border: solid;
+  border-radius: 12px;
+  text-align: right;
+  margin-left: 10px;
+  font-size: 45px;
+  margin-bottom: 5px;
 }
