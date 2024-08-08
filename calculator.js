@@ -21,6 +21,7 @@ let secondNumber = "";
 function operate(firstNumber, operator, secondNumber) {
   firstNumber = parseFloat(firstNumber);
   secondNumber = parseFloat(secondNumber);
+
   if (operator === "+") {
     return add(firstNumber, secondNumber);
   } else if (operator === "-") {
@@ -35,15 +36,15 @@ function operate(firstNumber, operator, secondNumber) {
 const displayDiv = document.getElementById("display");
 
 function numberIsHigherThanLimit() {
-  if (firstNumber.length > 14 || secondNumber.length > 14) {
+  if (firstNumber.length > 13 || secondNumber.length > 13) {
     console.log(
-      "at least one number is higher than 15",
+      "at least one number is higher than 13",
       firstNumber,
       secondNumber
     );
     return true;
   }
-  console.log("Neither number is higher than 15", firstNumber, secondNumber);
+  console.log("Neither number is higher than 13", firstNumber, secondNumber);
   return false;
 }
 
@@ -193,9 +194,15 @@ button0.addEventListener("click", function () {
 
 const buttonDecimal = document.querySelector('button.decimal[id="."]');
 buttonDecimal.addEventListener("click", function () {
-  if (!firstNumber.includes(".", 0)) {
+  if (!firstNumber.includes(".", 0) && firstNumber.length === 0) {
+    firstNumber += "0.";
+    displayDiv.innerText = firstNumber;
+  } else if (!firstNumber.includes(".", 0) && !operator) {
     firstNumber += ".";
     displayDiv.innerText = firstNumber;
+  } else if (!secondNumber.includes(".", 0) && secondNumber.length === 0) {
+    secondNumber += "0.";
+    displayDiv.innerText = secondNumber;
   } else if (!secondNumber.includes(".", 0)) {
     secondNumber += ".";
     displayDiv.innerText = secondNumber;
@@ -254,6 +261,6 @@ buttonEquals.addEventListener("click", function () {
     displayDiv.innerText = "Hell nah";
   } else {
     const answer = operate(firstNumber, operator, secondNumber);
-    displayDiv.innerText = answer;
+    displayDiv.innerText = parseFloat(answer.toFixed(13));
   }
 });
